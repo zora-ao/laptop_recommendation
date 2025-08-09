@@ -13,7 +13,8 @@ const App = () => {
           <Route path="/specs/:name" element={<Specs />} />
         </Route>
       </>
-    )
+    ),
+    { basename: "/laptop-recommendation" }
   )
 
   return (
