@@ -20,6 +20,10 @@
   background-color: oklch(37.3% 0.034 259.733);
 }
 
+.text-color{
+  color: oklch(37.3% 0.034 259.733);
+}
+
 .light-color{
   background-color: rgb(183, 183, 183);
 }

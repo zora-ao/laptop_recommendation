@@ -1,62 +1,60 @@
 import { useState } from 'react';
 import laptops from '../laptops.json'
-import Card from './Card'
+import SideCard from './SideCard';
 
 
 const Laptops = () => {
-    const [showing, setShowing] = useState(4);
+    const [showing, setShowing] = useState(3);
 
     const limitLaptop = laptops.slice(0, showing);
 
     const handleShow = () => {
-        setShowing(prev => prev + 4);
+        setShowing(prev => Math.min(prev + 3, laptops.length));
     }
 
     const handleLess = () => {
-        setShowing(prev => prev - 4);
+        setShowing(prev => Math.max(prev - 3, 3));
     }
 
     return (
-        <section className='p-5'>
+        <section className='p-5 flex flex-col justify-center'>
             <div className='py-4'>
                 <h1 className='poppins text-xl font-semibold'>Recommended Laptops</h1>
                 <p className='inter text-sm'>Here are some of the recommended laptops for you to choose.</p>
             </div>
 
-            <ul className='flex gap-x-5 my-5 mx-auto justify-center items-center'>
+            <ul className='flex my-8 mx-auto justify-around items-center bg-gray-300 rounded-full py-2 px-3'>
                 <li>
-                    <button className='bg-gray-700 text-white inter px-4 py-2 rounded-lg'>All</button>
+                    <button className='bg-blue-700 text-white inter px-6 py-2 rounded-full'>All</button>
                 </li>
                 <li>
-                    Budget
+                    <button className='inter px-6 py-2 rounded-full'>Budget</button>
                 </li>
                 <li>
-                    Mid-Range
+                    <button className='inter px-6 py-2 rounded-full'>Mid-Range</button>
                 </li>
                 <li>
-                    High-End
+                    <button className='inter px-6 py-2 rounded-full'>High-End</button>
                 </li>
             </ul>
 
-            <div className='flex flex-wrap justify-center gap-4'>
+            <div className='flex flex-wrap justify-center gap-x-2 gap-y-3'>
                 {limitLaptop.map((item) => (
-                    <div className='flex' key={item.id}>
-                        <Card 
-                        src={item.image} 
-                        title={item.name} 
-                        description={item.description}
-                        className='h-auto'
-                        />
-                    </div>
+                    <SideCard
+                    key={item.id}
+                    item={item}
+                    />
                 ))}
             </div>
             <div className='flex justify-center gap-x-4'>
-                <button 
-                onClick={handleShow}
-                className='px-3 py-2 active-color text-white poppins text-sm rounded my-4'>
-                    Show More
-                </button>
-                {showing > 4 ? (
+                {showing < laptops.length ? (
+                    <button 
+                    onClick={handleShow}
+                    className='px-3 py-2 active-color text-white poppins text-sm rounded my-4'>
+                        Show More
+                    </button>
+                ) : ""}
+                {showing > 3 ? (
                     <button 
                     onClick={handleLess}
                     className='px-3 py-2 active-color text-white poppins text-sm rounded my-4'>

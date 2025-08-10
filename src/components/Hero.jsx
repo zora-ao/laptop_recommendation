@@ -1,9 +1,11 @@
 import Card from "./Card"
+import { GiLaptop } from "react-icons/gi";
 
 const Hero = () => {
     return (
         <section className="py-10 px-5 md:px-0">
             <div className='text-center md:mt-10'>
+                <GiLaptop className="flex mx-auto text-4xl" />
                 <h1 className='poppins md:text-4xl text-2xl font-bold py-2'>WELCOME TO STUDENT LAPTOP GUIDE!</h1>
                 <p className='inter'>Find the best laptop for your academics</p>
                 <ul className='flex md:w-1/2 justify-center gap-x-2 mx-auto py-3'>
