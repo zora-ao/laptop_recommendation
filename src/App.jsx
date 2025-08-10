@@ -14,7 +14,7 @@ const App = () => {
         </Route>
       </>
     ),
-    { basename: "/laptop-recommendation" }
+    { basename: "/laptop_recommendation" }
   )
 
   return (

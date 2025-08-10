@@ -1,6 +1,6 @@
 {
   "name": "recommendation-site",
-  "homepage": "https://zora-ao.github.io/laptop-recommendation/",
+  "homepage": "https://zora-ao.github.io/laptop_recommendation/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
