@@ -2,6 +2,7 @@ import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } 
 import MainLayout from "./components/layout/MainLayout"
 import Home from "./components/pages/Home"
 import Specs from "./components/pages/Specs"
+import Laptops from "./components/Laptops"
 
 const App = () => {
 

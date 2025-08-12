@@ -2,13 +2,13 @@ import { Link } from "react-router-dom"
 
 const Navbar = () => {
     return (
-        <nav className='px-5 py-3'>
+        <nav id="home" className='px-5 py-3'>
             <ul className='flex inter text-[15px] gap-x-4'>
                 <li>
                     <Link to="/">Home</Link>
                 </li>
                 <li>
-                    <Link to="/">Laptops</Link>
+                    <a href="#laptop">Laptops</a>
                 </li>
                 <li>
                     <Link to="/">About</Link>

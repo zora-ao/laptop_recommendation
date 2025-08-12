@@ -8,7 +8,7 @@ const SideCard = ({item}) => {
     const {battery, ram, storage, description, image, name} = item;
 
     return (
-        <div className='shadow-lg flex flex-col justify-between text-center gap-x-10 items-center w-[350px] px-5 py-4 rounded'>
+        <div className='shadow-lg hover:shadow-2xl hover:shadow-gray-600 duration-300 ease transition-all flex flex-col justify-between text-center gap-x-10 items-center w-[350px] px-5 py-4 rounded'>
             <img 
             className='w-[280px] h-[250px] rounded-lg'
             src={image} alt={name} />
@@ -18,18 +18,18 @@ const SideCard = ({item}) => {
                     {description}
                 </p>
                 <hr className="border-gray-400 my-2 w-full" />
-                <div className='flex gap-x-3 text-sm justify-center'>
-                    <div className='flex items-center gap-1'>
+                <div className='flex items-center gap-x-3 text-sm justify-center'>
+                    <div className='flex flex-col items-center gap-'>
                         <BsCpuFill />
                         <h1 className='inter'>{ram}</h1>
                     </div>
 
-                    <div className='flex items-center gap-1'>
+                    <div className='flex flex-col items-center gap-1'>
                         <MdOutlineStorage />
                         <h1 className='inter'>{storage}</h1>
                     </div>
 
-                    <div className='flex items-center gap-1'>
+                    <div className='flex flex-col items-center gap-1'>
                         <IoMdBatteryFull />
                         <h1 className='inter'>{battery}</h1>
                     </div>

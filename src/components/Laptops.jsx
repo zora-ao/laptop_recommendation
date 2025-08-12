@@ -4,63 +4,51 @@ import SideCard from './SideCard';
 
 
 const Laptops = () => {
-    const [showing, setShowing] = useState(3);
+    const [active, setActive] = useState("All");
+    const categories = ["All", "Budget", "Mid-Range", "High-End"];
 
-    const limitLaptop = laptops.slice(0, showing);
-
-    const handleShow = () => {
-        setShowing(prev => Math.min(prev + 3, laptops.length));
+    const getFilteredCat = () => {
+        if (active === "Budget") {
+            return laptops.filter(item => item.price >= 2000 && item.price <= 35999);
+        }
+        else if (active === "Mid-Range") {
+            return laptops.filter(item => item.price >= 36000 && item.price <= 55999);
+        }
+        else if (active === "High-End") {
+            return laptops.filter(item => item.price > 56000);
+        }
+        return laptops;
     }
 
-    const handleLess = () => {
-        setShowing(prev => Math.max(prev - 3, 3));
-    }
+    const filtered = getFilteredCat();
 
     return (
-        <section className='p-5 flex flex-col justify-center'>
+        <section id='laptop' className='md:p-5 px-4 flex flex-col justify-center relative'>
             <div className='py-4'>
                 <h1 className='poppins text-xl font-semibold'>Recommended Laptops</h1>
                 <p className='inter text-sm'>Here are some of the recommended laptops for you to choose.</p>
             </div>
 
-            <ul className='flex my-8 mx-auto justify-around items-center bg-gray-300 rounded-full py-2 px-3'>
+            <ul className='flex my-8 justify-around md:mx-auto items-center bg-gray-300 md:rounded-full rounded-lg py-2 px-3 sticky top-2'>
                 <li>
-                    <button className='bg-blue-700 text-white inter px-6 py-2 rounded-full'>All</button>
-                </li>
-                <li>
-                    <button className='inter px-6 py-2 rounded-full'>Budget</button>
-                </li>
-                <li>
-                    <button className='inter px-6 py-2 rounded-full'>Mid-Range</button>
-                </li>
-                <li>
-                    <button className='inter px-6 py-2 rounded-full'>High-End</button>
+                    {categories.map((cat) => (
+                        <button 
+                        key={cat}
+                        onClick={() => setActive(cat)}
+                        className={`cursor-pointer text-sm inter md:px-6 px-3 py-2 rounded-full duration-300 ease ${active === cat ? "bg-blue-700 text-white" : ""}`}>
+                            {cat}
+                        </button>
+                    ))}
                 </li>
             </ul>
 
             <div className='flex flex-wrap justify-center gap-x-2 gap-y-3'>
-                {limitLaptop.map((item) => (
-                    <SideCard
-                    key={item.id}
-                    item={item}
-                    />
-                ))}
-            </div>
-            <div className='flex justify-center gap-x-4'>
-                {showing < laptops.length ? (
-                    <button 
-                    onClick={handleShow}
-                    className='px-3 py-2 active-color text-white poppins text-sm rounded my-4'>
-                        Show More
-                    </button>
-                ) : ""}
-                {showing > 3 ? (
-                    <button 
-                    onClick={handleLess}
-                    className='px-3 py-2 active-color text-white poppins text-sm rounded my-4'>
-                        Show Less
-                    </button>
-                ) : ""}
+                    {filtered.map((item) => (
+                        <SideCard
+                        key={item.id}
+                        item={item}
+                        />
+                    ))}
             </div>
         </section>
     )

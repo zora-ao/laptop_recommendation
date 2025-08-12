@@ -10,10 +10,10 @@ const Hero = () => {
                 <p className='inter'>Find the best laptop for your academics</p>
                 <ul className='flex md:w-1/2 justify-center gap-x-2 mx-auto py-3'>
                     <li>
-                        <button className='active-color py-2 px-6 rounded-full inter text-white'>Budget Friendly</button>
+                        <button className='active-color py-2 md:px-6 px-3 rounded-full inter text-white'>Budget Friendly</button>
                     </li>
                     <li>
-                        <button className='light-color py-2 px-6 rounded-full inter '>Top Picks</button>
+                        <button className='light-color py-2 md:px-6 px-3 rounded-full inter '>Top Picks</button>
                     </li>
                 </ul>
             </div>
