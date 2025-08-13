@@ -29,13 +29,13 @@ const Laptops = () => {
                 <p className='inter text-sm'>Here are some of the recommended laptops for you to choose.</p>
             </div>
 
-            <ul className='flex my-8 justify-around md:mx-auto items-center bg-gray-300 md:rounded-full rounded-lg py-2 px-3 sticky top-2'>
+            <ul className='flex z-50 my-8 justify-around md:mx-auto items-center bg-gray-300 md:rounded-full rounded-lg py-2 px-3 sticky top-2'>
                 <li>
                     {categories.map((cat) => (
                         <button 
                         key={cat}
                         onClick={() => setActive(cat)}
-                        className={`cursor-pointer text-sm inter md:px-6 px-3 py-2 rounded-full duration-300 ease ${active === cat ? "bg-blue-700 text-white" : ""}`}>
+                        className={`cursor-pointer text-sm inter md:px-6 px-3 py-2 rounded-full duration-300 ease ${active === cat ? "bg-blue-700 text-white" : "text-black"}`}>
                             {cat}
                         </button>
                     ))}

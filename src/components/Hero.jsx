@@ -22,19 +22,19 @@ const Hero = () => {
                 <div className='flex flex-wrap justify-evenly gap-3 md:gap-0'>
                     {/* cards */}
                     <Card 
-                    src="https://www.notebookcheck.net/fileadmin/Notebooks/Sonstiges/bestmobilelaptops.jpg"
-                    description="A sleek, lightweight laptop perfect for students and professionals who need portability and long battery life"
-                    title="Asus ROG 5 pro" />
+                    src="https://techcrunch.com/wp-content/uploads/2020/11/2020-11-16-074520097.jpg"
+                    description="Outstanding performance for its price in the premium segment, fanless design (silent), long battery life (up to 18 hrs), and excellent build quality."
+                    title="Apple MacBook Air M1" />
 
                     <Card 
-                    src='https://cdn.mos.cms.futurecdn.net/EW3NoUEQuteWDPS2xkSgtA.jpg'
-                    description="A sleek, lightweight laptop perfect for students and professionals who need portability and long battery life"
-                    title="Acer nitro 5 red" />
+                    src='https://laptopmedia.com/wp-content/uploads/2024/11/8-3.jpg'
+                    description="Lightweight, premium build, strong Intel Core i7 + 16GB RAM performance, excellent battery, and good screen quality."
+                    title="ASUS ZenBook 14" />
 
                     <Card 
-                    src='https://images.summitmedia-digital.com/spotph/images/2022/06/30/guide-to-everyhing-laptop-640-1656580338.jpg'
-                    description="A sleek, lightweight laptop perfect for students and professionals who need portability and long battery life"
-                    title="Huawie Matebook D15" />
+                    src='https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/21786687/mchin_181113_4146_0009.0.jpg?quality=90&strip=all&crop=0,0,100,100'
+                    description="Affordable but still powerful (Ryzen 7 + up to 16GB RAM), lightweight, strong battery life, and solid productivity performance."
+                    title="Acer Swift 3" />
                 </div>
             </div>
         </section>

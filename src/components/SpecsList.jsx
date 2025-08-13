@@ -4,9 +4,11 @@ import { GiBattery100, GiLaptop } from "react-icons/gi";
 import { MdSdStorage } from "react-icons/md";
 import { FaDisplay } from "react-icons/fa6";
 import { IoMdPricetags } from "react-icons/io";
+import { useTheme } from "../contexts/themeContext";
 
 
 const SpecsList = ({laptop}) => {
+    const {theme} = useTheme();
 
     const {processor, battery, brand, ram, storage, screenSize, price} = laptop;
 
@@ -23,7 +25,7 @@ const SpecsList = ({laptop}) => {
     return (
         <section className="flex flex-col gap-2 md:w-1/2 h-[350px] overflow-y-auto scroll-smooth">
                 {list.map((item) => (
-                    <div key={item.id} className="shadow-lg border hover:bg-gray-300 rounded-lg py-2 px-3 backdrop-blur-2xl flex items-center gap-3">
+                    <div key={item.id} className={`${theme === "light" ? "hover:bg-gray-300" : "hover:bg-black"} shadow-lg border rounded-lg py-2 px-3 backdrop-blur-2xl flex items-center gap-3`}>
                         <div className={`${item.color} p-3 rounded-full shadow-xl`}>
                             {item.icon}
                         </div>

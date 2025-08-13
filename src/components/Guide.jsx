@@ -3,8 +3,11 @@ import { MdSdStorage } from "react-icons/md";
 import { MdStorage } from "react-icons/md";
 import { IoMdBatteryCharging } from "react-icons/io";
 import { ImDisplay } from "react-icons/im";
+import { useTheme } from "../contexts/themeContext";
 
 const Guide = () => {
+
+    const { theme } = useTheme();
 
     const guideList = [
         {
@@ -74,7 +77,7 @@ const Guide = () => {
                         <div 
                         className='sticky top-20 border hover:border hover:border-black duration-300 ease md:px-12 px-6 py-8 rounded-lg shadow-lg md:w-3/4 mx-auto'
                         >
-                        <h2 className='poppins text-2xl font-semibold text-color flex items-center gap-x-5'>
+                        <h2 className={`${theme === "light" ? "text-color" : "text-blue-200"} poppins text-2xl font-semibold flex items-center gap-x-5`}>
                             {item.icon}
                             {item.title}
                         </h2>
