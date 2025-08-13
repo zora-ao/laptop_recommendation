@@ -2,13 +2,19 @@ import { MdOutlineStorage } from "react-icons/md";
 import { IoMdBatteryFull } from "react-icons/io";
 import { BsCpuFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import {motion} from 'framer-motion';
 
 const SideCard = ({item}) => {
 
     const {battery, ram, storage, description, image, name} = item;
 
     return (
-        <div className='shadow-lg hover:shadow-2xl hover:shadow-gray-600 duration-300 ease transition-all flex flex-col justify-between text-center gap-x-10 items-center w-[350px] px-5 py-4 rounded'>
+        <motion.div 
+        initial={{opacity: 0}}
+        animate={{opacity: 1}}
+        transition={{duration: 0.5}}
+        whileInView={{opacity: 1}}
+        className='shadow-lg hover:shadow-2xl hover:shadow-gray-600 duration-300 ease transition-all flex flex-col justify-between text-center gap-x-10 items-center w-[350px] px-5 py-4 rounded'>
             <img 
             className='w-[280px] h-[250px] rounded-lg'
             src={image} alt={name} />
@@ -42,7 +48,7 @@ const SideCard = ({item}) => {
                     </button>
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 

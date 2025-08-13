@@ -24,14 +24,14 @@ const Specs = () => {
                     </div>
                     <SpecsList laptop={laptop} />
                 </div>
-                <div className='md:p-4 my-14 justify-evenly flex mx-auto flex-wrap'>
+                <div className='md:p-4 my-14 md:justify-evenly flex mx-auto md:flex-row flex-col'>
                     <div className='px-10'>
                         <h1 className='poppins text-2xl font-semibold my-2 text-center'>More Details</h1>
                         <p className='inter text-justify indent-10'>{laptop.description}</p>
                     </div>
                     <div className='my-4'>
                         <iframe
-                        className='rounded-lg md:w-[560px] w-[300px] h-[250px] md:h-[315px]'
+                        className='rounded-lg md:w-[560px] w-[300px] mx-auto h-[250px] md:h-[315px]'
                         src={laptop.review} 
                         title="YouTube video player" frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
