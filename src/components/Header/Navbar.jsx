@@ -10,7 +10,7 @@ const Navbar = () => {
 
     return (
         <nav id="home" className='px-5 py-3'>
-            <ul className='flex inter text-[15px] gap-x-4 items-center'>
+            <ul className='flex inter text-[15px] gap-x-4 items-center'>  
                 <li>
                     <Link to="/">Home</Link>
                 </li>
