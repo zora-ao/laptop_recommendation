@@ -26,7 +26,7 @@ const App = () => {
         </Route>
       </>
     ),
-    { basename: "/laptop_recommendation" }
+    { basename: "/" }
   )
 
   return (
