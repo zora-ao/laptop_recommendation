@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: process.env.VITE_BASE_PATH || '/laptop_recommendation/',
+  base: import.meta.env.VITE_BASE_PATH || '/laptop_recommendation/',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
